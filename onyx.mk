@@ -52,6 +52,10 @@ PRODUCT_PACKAGES += \
     init.recovery.qcom.rc \
     ueventd.qcom.rc
 
+#RECOVERY
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/twrp.fstab:recovery/root/etc/twrp.fstab
+
 # ANT+
 PRODUCT_PACKAGES += \
     AntHalService \
