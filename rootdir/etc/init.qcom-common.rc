@@ -25,6 +25,11 @@ on init
     # Set permissions for persist partition
     mkdir /persist 0771 system system
     mkdir /firmware 0771 system system
+    symlink /sdcard /mnt/sdcard
+    symlink /sdcard /storage/sdcard0
+
+# Pass required symbols for OOS Blobs
+export LD_PREDOAD "/system/lib/libOP.so"
 
 on early-boot
     # set RLIMIT_MEMLOCK to 64MB
